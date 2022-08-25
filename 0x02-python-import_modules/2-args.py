@@ -8,11 +8,11 @@ if __name__ == "__main__":
     if (len(args) == 0):
         print('arguments.')
     elif (len(args) == 1):
-        print('argument: ', end='\n')
+        print('argument:')
         print('1: {:s}'.format(argv[1]))
 
     else:
-        print('arguments:', end='\n')
+        print('arguments:')
 
     for i in range(1, len(args)):
         print('{:d}: {:s}'.format(i + 1, (argv[i + 1])), end='\n')
