@@ -4,6 +4,7 @@
     Defines a class Square with private attribute
 """
 
+
 class Square:
     """
         Definition with __init__ size
