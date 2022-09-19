@@ -74,4 +74,4 @@ class Rectangle():
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return ("\n".join(["#" * self.__width for rows in range(self.__height)]))
+        return ("\n".join(["#"*self.__width for rows in range(self.__height)]))
