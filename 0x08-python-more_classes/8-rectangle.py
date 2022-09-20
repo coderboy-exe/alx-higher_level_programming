@@ -80,10 +80,15 @@ class Rectangle():
         """
             Rectangular pattern
         """
+        rect = ""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return ("\n".join([str(self.print_symbol) * self.__width
-                         for rows in range(self.__height)]))
+        for i in range(self.__height):
+            if i > 0:
+                rect += "\n"
+            for j in range(self.__width):
+                rect += str(self.print_symbol)
+        return rect
 
     def __repr__(self):
         """
