@@ -12,12 +12,12 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     br = False
     for i in text:
-        if br == False:
+        if br is False:
             if i == ' ':
                 continue
             else:
                 br = True
-        if br == True:
+        if br is True:
             if i == '?' or i == '.' or i == ':':
                 print(i)
                 print()
