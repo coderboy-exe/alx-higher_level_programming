@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+"""
+    `Base` class Module
+"""
+import json
+
+
+class Base:
+    """
+        Defines Base class
+    """
+
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        """
+            Initialization attributes for Base class
+            Args:
+                id: public instance attribute
+        """
+
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
