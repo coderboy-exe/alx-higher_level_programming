@@ -125,12 +125,12 @@ class Rectangle(Base):
         for arg in range(len(args)):
             for attr in range(len(attributes)):
                 if attr != arg:
+                    setattr(self, attributes[attr], args[arg])
                     break
-                setattr(self, attrs[attr], args[arg])
 
         if not args or len(args) == 0:
             for key, value in kwargs.items():
                 for attr in range(len(attributes)):
-                    if key != attributes[attr]:
+                    if key == attributes[attr]:
+                        setattr(self, attributes[attr], value)
                         break
-                    setattr(self, attributes[attr], value)
