@@ -113,8 +113,8 @@ class Rectangle(Base):
             Prints the rectangle attributes in the format
             '[Rectangle] (<id>) <x>/<y> - <width>/<height>'
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
-                                                       self.width, self.height)
+        msg = "[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}"
+        return msg.format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """
@@ -134,3 +134,15 @@ class Rectangle(Base):
                     if key == attributes[attr]:
                         setattr(self, attributes[attr], value)
                         break
+
+    def to_dictionary(self):
+        """
+            Returns dictionary representation of a Rectangle
+        """
+        d_rep = {}
+        d_rep["id"] = self.id
+        d_rep["width"] = self.width
+        d_rep["height"] = self.height
+        d_rep["x"] = self.x
+        d_rep["y"] = self.y
+        return d_rep

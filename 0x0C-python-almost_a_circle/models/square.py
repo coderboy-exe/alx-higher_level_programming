@@ -59,3 +59,15 @@ class Square(Rectangle):
                     if key == attributes[attr]:
                         setattr(self, attributes[attr], value)
                         break
+
+    def to_dictionary(self):
+        """
+            Returns dictionary representation of a Square
+        """
+        d_rep = {}
+        d_rep["id"] = self.id
+        d_rep["size"] = self.size
+        d_rep["x"] = self.x
+        d_rep["y"] = self.y
+        return d_rep
+
