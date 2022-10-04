@@ -70,4 +70,3 @@ class Square(Rectangle):
         d_rep["x"] = self.x
         d_rep["y"] = self.y
         return d_rep
-
