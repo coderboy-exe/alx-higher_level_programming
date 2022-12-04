@@ -13,7 +13,8 @@ if __name__ == "__main__":
                                 db=sys.argv[3],
                                 charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY id ASC"
+                .format(sys.argv[4]))
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
