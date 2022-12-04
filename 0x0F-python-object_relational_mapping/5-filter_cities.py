@@ -13,11 +13,13 @@ if __name__ == "__main__":
                                 db=sys.argv[3],
                                 charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY id ASC"
-                .format(sys.argv[4]))
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        if row[1] == sys.argv[4]:
-            print(row)
+    cur.execute("SELECT cities.name\
+                 FROM states\
+                 INNER JOIN cities ON states.id = cities.state_id\
+                 WHERE states.name LIKE %s\
+                 ORDER BY cities.id ASC", (sys.argv[4], ))
+
+    print(", ".join(rows[0] for rows in c.fetchall()))
+
     cur.close()
     conn.close()
