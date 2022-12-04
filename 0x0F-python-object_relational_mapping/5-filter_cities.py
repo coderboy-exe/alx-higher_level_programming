@@ -19,7 +19,7 @@ if __name__ == "__main__":
                  WHERE states.name LIKE %s\
                  ORDER BY cities.id ASC", (sys.argv[4], ))
 
-    print(", ".join(rows[0] for rows in c.fetchall()))
+    print(", ".join(row[0] for row in cur.fetchall()))
 
     cur.close()
     conn.close()
