@@ -3,6 +3,7 @@
     Find a peak in a list of unsorted integers
 """
 
+
 def find_peak(list_of_integers):
     """ Function def """
 
@@ -19,7 +20,7 @@ def find_peak(list_of_integers):
     if arr[r_end] > arr[r_end-1]:
         return arr[r_end]
 
-    if (len(arr))%2 == 0:
+    if (len(arr)) % 2 == 0:
         mid = ((l_end + r_end) // 2) + 1
     else:
         mid = (l_end + r_end) // 2
